@@ -1,0 +1,33 @@
+h1{
+    color:rgb(206, 151, 255);
+    font-weight:400 ;
+    font-size: x-large;
+    padding: 0px 40px;
+}
+
+ul {
+    font-size: medium;
+    font-style: italic;
+    list-style-type: none;
+    margin: 1;
+    padding: 5;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+ 
+  li  {
+    float:left;
+    color: white;
+    text-align: center;
+    padding: 4px 30px;
+    text-decoration: none;
+  }
+   h3{
+    padding: 0px 40px;
+    font-weight:400 ;
+
+
+   }
+
+  
