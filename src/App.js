@@ -9,7 +9,7 @@ const App =()=> {
     return (
     <div className= "App">
         <NavBar/>
-        <h1>Productos Fit</h1>
+        <h1 className='fit'>Productos Fit</h1>
        <ItemListContainers />
     </div> 
     );

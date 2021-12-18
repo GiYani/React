@@ -1,17 +1,14 @@
-div{
-    
+div{    
     float:left
-
 }
 
-
-
-
-h1{
-    color:blueviolet;
+.titulo-producto{
+    color:rgb(72, 9, 131);
     text-align: center;
 }
-h3{
-    text-align: left;
+
+.precio{
+    text-align: center;
+    color:cadetblue;
     
 }
