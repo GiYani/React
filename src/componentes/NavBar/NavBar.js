@@ -1,18 +1,35 @@
 import React from "react"
 import './Navbar.css'
 import CartWidgets from '../CartWidgets/CartWidget';
+import{NavLink} from "react-router-dom";
 
-export const NavBar = () => {
-    return (      
-        <ul>
-            <li><h1>Sweet Food</h1></li>
-            <li><h3>Fit/Integral</h3></li>
-            <li><h3>Dulce </h3></li>
-            <li><h3>Salado </h3></li>
-            <li><h3>Especial Fiestas </h3></li>
-            <li><h3><CartWidgets/></h3></li>
-        </ul>
+const NavBar = () => {
+    const categories = [
+      { id: 'home', address: '/', text: 'Pita´s Food' },
+      { id: 'a1', address: '/fitIntegral/Integral', text: 'Integral' },
+      { id: 'a2', address: '/fitIntegral/Fit', text: 'Fit' },
+      { id: 'b', address: '/dulce', text: 'Dulce' },
+      { id: 'c', address: '/salado', text: 'Salado' },
+      
+    ];
+  
+    return (
+      <section className="nav">
+      
+        {categories.map((cat) => {
+          return (
+            <div className="links" key={cat.id}>
+              <NavLink to={cat.address} exact activeClassName={'activeClass'}>
+                {cat.text}
+              </NavLink>
+            </div>
+          );
+          
+        })}
+        <h3 className="carrito"><CartWidgets/></h3>
+      </section>
     );
-}
+  };
+  
 
 export default NavBar;

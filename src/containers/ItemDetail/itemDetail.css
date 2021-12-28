@@ -1,0 +1,18 @@
+
+.item_card {
+  margin-top: 3rem;
+  margin-left: 6rem;
+  padding: 1rem;
+  box-shadow: 7px 6px 12px -1px rgba(72, 72, 72, 0.77);
+  border-radius: 10px;    
+  color: white;
+  
+}
+
+.big-img {
+  height: 500px;
+  border-radius: 30px;
+
+}
+
+

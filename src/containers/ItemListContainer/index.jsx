@@ -1,20 +1,43 @@
 
 import { useEffect, useState } from "react";
 import ItemList from "../../componentes/itemList";
-import MockedItems from "../../mock/mockItem";
+import mockedItems from "../../mock/mockItem";
+import { useParams } from "react-router-dom";
 
-const ItemListContainers =()=>{
+export const ItemListContainers = ({ greeting }) => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const[items,setItems]= useState([]);
+  const { catId } = useParams();
 
-    useEffect( ()=>{
-        const itemPromise = new Promise ((res,rej) => {
-            res(MockedItems);
-        });
-        itemPromise.then((res)=> setItems(res))
-    }, [items]);
+  useEffect(() => {
+    setLoading(true);
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        const myData = catId
+          ? mockedItems.filter((item) => item.category === catId)
+          : mockedItems;
 
-    return <ItemList items = {items}/>;
+        resolve(myData);
+      }, 1000);
+    });
+
+    getItems
+      .then((res) => {
+        setItems(res);
+      })
+      .finally(() => setLoading(false));
+  }, [catId]);
+
+  return loading ? (
+    <h2 style={{color:'rgb(64, 147, 168)', fontWeight:'400'}}>CARGANDO...</h2>
+  ) : (
+    <>
+      <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
+      <ItemList items={items} />
+    </>
+  );
 };
+
 
 export default ItemListContainers;
