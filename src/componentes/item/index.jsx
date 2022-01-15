@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 
  const Item = ({ id, title, category, description, image, precio }) => {
+    
+   
     return (
       <Link to={`/product/${id}`}>
         <div>

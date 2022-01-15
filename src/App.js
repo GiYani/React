@@ -10,11 +10,14 @@ import {
     Route,
     Redirect,
    } from "react-router-dom";
+import { CompraProvider } from './componentes/CompraContex';
 
   
 const App =()=> {
     return (
+   
     <BrowserRouter className= "App">
+         <CompraProvider>
         <NavBar/>
            <Switch>
                 <Route exact path="/">                 
@@ -33,11 +36,18 @@ const App =()=> {
                 <Route path="/salado">
                     <h3 className='title'>Opciones Saladas</h3>
                 </Route>
+                <Route path="/carrito">
+                    <h3 className='title'>Carrito</h3>
+                    <CompraProvider/>
+                </Route>
                 <Route path= "*">
                     <Redirect to='/'/>
                 </Route>
              </Switch>
+             </CompraProvider>
     </BrowserRouter> 
+  
+  
     );
 }
 
