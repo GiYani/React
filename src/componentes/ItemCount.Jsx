@@ -1,9 +1,6 @@
 import { useState } from 'react';
 
-
-
-
-export const ItemCount = (onAdd) => {
+const ItemCount = (onAdd) => {
   const [contador, setContador] = useState(1);
 
   const contadorAdd =()=>{
@@ -27,7 +24,9 @@ export const ItemCount = (onAdd) => {
       :()=>{ setContador(contador);}
     }></button>
     <button onClick={contadorAdd}> Agregar</button>
-
+   
     </div> 
   );
 };
+
+export default ItemCount
