@@ -2,35 +2,27 @@ import { useContext } from "react"
 import { CompraContext } from "../CompraContex"
 
 export const CompraDetail=()=>{
-    const{products}=useContext(CompraContext);
+    const{items}=useContext(CompraContext);
      
-    const totalCompra =(products)=()=>{
-         return( products.productos.precio * products.quantity);
-    };
-    const sumaCompra =(products)=()=>{
-        let total = 0
-        for (let i = 0; i <products.length; i++){
-            total = total + products(i).productos.precio * products(i).quantity;
-        };
-        return(total);
+    const totalCompra = () => {
+        return items.reduce((acc, curr) => acc + curr.precio * curr.quantity, 0);
+      
+
     };    
  
     return(
         <div>
-            {products.map((products) => {
+            {items.map((items) => {
                 return (
                 <div>
                     <tr>
-                        <td>{products.productos.title}</td>
-                        <td>{products.quantity}</td>
-                        <td>{products.productos.precio}</td>
-                        <td>{totalCompra(products)}</td>
+                        <td>{items.items.title}</td>
+                        <td>{items.quantity}</td>
+                        <td>{items.item.precio}</td>
+                        <td>{totalCompra()}</td>
                         <td> <button> Borrar </button></td>
                     </tr>
-                    <tr>
-                    <td> <p>Precio Total</p> </td>
-                    <td>{sumaCompra(products)}</td>
-                    </tr>
+
                 </div>);
             })};
         </div>

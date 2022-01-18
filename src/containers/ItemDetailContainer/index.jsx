@@ -20,8 +20,7 @@ export const ItemDetailContainer = () => {
 
     getItems.then((res) => {
         setProduct(res);
-         })
-        .finally(() => setLoading(false));
+}) .finally(() => setLoading(false));
     }, [itemId]);
 
   return loading ? 

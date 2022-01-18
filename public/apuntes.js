@@ -92,6 +92,7 @@ export const CompraDetail=()=>{
  
 };
 
+import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { CompraContext } from "../CompraContex";
 import NavBar from "../NavBar/NavBar";
@@ -122,7 +123,7 @@ export const Cart =()=>{
         return(
             <div>
                 <div><p>No hay Productos en el Carrito</p></div>
-                <button onClick={<NavBar to="/"/>}>Seguir Comprando</button>
+                <Link to="/">Seguir Comprando</Link>
             </div>
         );
     };

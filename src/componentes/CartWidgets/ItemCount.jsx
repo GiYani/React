@@ -1,29 +1,21 @@
 import { useState } from 'react';
 
-const ItemCount = (onAdd) => {
-  const [contador, setContador] = useState(1);
+const ItemCount = ({onAdd,stock}) => {
+  const [contador, setContador] = useState(0);
 
-  const contadorAdd =()=>{
-    onAdd(contador);
-
-  };
-  function Check(props){
-    return contador<props.stock;
-
-  }
-
+  
   return (
    <div>
     <button onClick = {contador>1 
       ?()=>{ setContador (contador-1);}
       :()=>{ setContador(contador);}
-    }></button>
+    }>-</button>
     <button>{contador}</button>
-    <button onClick = {Check
+    <button onClick = {contador<stock
       ?()=>{ setContador (contador+1);}
       :()=>{ setContador(contador);}
-    }></button>
-    <button onClick={contadorAdd}> Agregar</button>
+    }>+</button>
+    <button onClick={ ()=> onAdd (contador)}> Agregar</button>
    
     </div> 
   );

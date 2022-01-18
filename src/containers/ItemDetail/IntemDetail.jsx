@@ -1,11 +1,22 @@
 import  './itemDetail.css'
-import NavBar from '../../componentes/NavBar/NavBar';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import ItemCount  from '../../componentes/CartWidgets/ItemCount';
 import { CompraContext } from '../../componentes/CompraContex';
+import { Link } from 'react-router-dom';
 
 
-export const ItemDetail = ({category, title, image, description, precio, id }) => { 
-  const {item, removeProduct,addUnidad}= useContext(CompraContext);
+
+export const ItemDetail = ({category, title, image, description, precio, id, stock }) => { 
+  
+  const[redireccionCart, setRedireccion]=useState(false);
+  const {item, addProduct}= useContext(CompraContext);
+ 
+
+  const onAdd =(contador)=>{
+    setRedireccion(true)
+    addProduct ({quantity:contador,category, title, image, description, precio, id, stock });
+    alert(`Agrego ${contador} productos     `)
+  }
     
   return (
     <div className={`item_card ${category}-fitIntegral`}>
@@ -15,16 +26,21 @@ export const ItemDetail = ({category, title, image, description, precio, id }) =
         </span>
       <h3 style={{ fontWeight:'400'}}>{description}</h3>
       <h3 style={{fontWeight:'500'}}>{precio}</h3>
+      <Link to="/">Seguir comprando</Link> 
+      <br/>
+
+      <br/>                           
       <div>
-      <div>
-          <button onClick={() => addUnidad(item.id)}>AGREGAR</button>
-          <button onClick={() => removeProduct(item.id)}>BORRAR</button>
-          <button onClick={<NavBar to="/"/>}>Seguir Comprando</button>
+        {redireccionCart ? (
+        <Link to="/carrito" className='btn'>Finalizar Compra</Link>
+        ):(
+          <ItemCount
+          stock = {stock}
+          onAdd ={onAdd}/>
+        )}     
+                 
       </div>
-    
       
-         
-      </div>
     </div>
     
   );

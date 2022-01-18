@@ -1,31 +1,44 @@
-import { useContext } from "react";
-import { ItemDetail } from "../../containers/ItemDetail/IntemDetail";
+import { Link } from "react-router-dom";
+import { useContext } from "react/cjs/react.development";
 import { CompraContext } from "../CompraContex";
-import ItemCount from "../ItemCount.Jsx";
-import { NewProduct } from "./newProduct";
+
+
 
 export const Carrito =()=>{
-    const {item, removeProduct,addProduct,addUnidad, enCarro,totalPrecio }= useContext(CompraContext);
+    const{ items, removeProduct, vaciarCarrito}= useContext(CompraContext)
+    console.log(items)
 
-    return(
-        <div>
-        <h3>Productos en carrito</h3>
-        {item.map((item, id) => {
-          return (
-            <ItemDetail
-              key={id}
-              item={item}
-              removeProduct={removeProduct}
-              addUnidad={addUnidad}
-                                 
-            />
-          );
-         
-        })}
-        <NewProduct addProduct={addProduct} enCarro={enCarro} totalPrecio={totalPrecio} />
-        <ItemCount/>
-        </div>
-        
-    );
-    
-};
+    const totalCompra = () => {
+      return items.reduce((acc, curr) => acc + curr.precio * curr.quantity, 0);
+  };    
+
+    const Limpiar =()=>{ vaciarCarrito()}
+    if (items.length> 0){
+        return <>{
+          items.map((item) => {
+            return <div>
+                <table>
+                <tr>
+                    <td>{item.title}</td>
+                    <td>{item.quantity}</td>
+                    <td>{item.precio}</td>
+                    <td>{item.quantity * item.precio}</td>
+                    <td><button onClick={()=>removeProduct(item.id)}> borrar producto</button></td>
+
+                </tr>
+               </table>
+            </div>        
+          }
+          )
+        }{totalCompra()}
+                  <button onClick={Limpiar}>vaciar Carrito</button>
+        </>
+    } else {
+        return(
+            <div>
+                <div><p>No hay Productos en el Carrito</p></div>
+                <Link to="/">Seguir Comprando</Link>
+            </div>
+        );
+    };
+}

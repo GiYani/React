@@ -1,7 +1,10 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
+import { CompraContext } from "../CompraContex";
 
 
-export const NewProduct =({addProduct, enCarro,totalPrecio})=>{
+export const NewProduct =()=>{
+
+    const{addProduct, enCarro,totalPrecio}=useContext(CompraContext)
     const referencia= useRef ({});
     
     const handleSubmit=(event)=>{

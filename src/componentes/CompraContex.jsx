@@ -11,38 +11,31 @@ export const CompraProvider = ({children}) => {
       setItems(auxArray);
     };
 
-    const addProduct= (item, id) => {
+    const addProduct= (producto) => {
       const agregarProduct = items.find(
-        (item) => item.id  === id
+        (item) => item.id  === producto.id
       );
   
       if (agregarProduct) {
-        agregarProduct.cantidad += 1;
+        agregarProduct.quantity += producto.quantity;
         setItems([...items]);         
       } else {
-        setItems([...items, { item:item, cantidad: 1 }]);
+        setItems([...items, producto]);
       }
     };
-    
-    const addUnidad = (id) => {
-      const agregarProduct = items.find((item) => item.id === id);
-  
-      if (agregarProduct) {
-        agregarProduct.id += 1;
-        setItems([...items]);
-      }
-    };
+    console.log(items)
 
-    const enCarro =(id)=>{
-      return items.findIndex((item)=>item.id===id);
-    };
+    const vaciarCarrito =()=>{
+      setItems ([])
+    }
+
     const totalPrecio = () => {
       return items.reduce((acc, curr) => acc + curr.precio, 0);
     };
   
 
    
-    return ( <CompraContext.Provider value={[removeProduct, addProduct, addUnidad, enCarro, totalPrecio]}>{children}
+    return ( <CompraContext.Provider value={{items,removeProduct, addProduct, vaciarCarrito,totalPrecio}}>{children}
     </CompraContext.Provider>);
 };    
 
