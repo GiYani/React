@@ -25,6 +25,7 @@ const mockedItems = [
         description: "Reducido en grasas, sin azucar, con especias",
         precio:300,
         image: "",
+        stock:4
     },
     {
 
@@ -34,6 +35,7 @@ const mockedItems = [
         description: "Ingredientes integrales, reducido en azucar y grasas",
         precio: 300,
         image: '/img/budin.jpg',
+        stock:4
     },
     {
 
@@ -43,6 +45,7 @@ const mockedItems = [
         description: "Harina de Avena, reducido en grasas (apto veganos)",
         precio:300,
         image: '',
+        stock:5
     },
 ];
 
