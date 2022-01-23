@@ -1,6 +1,7 @@
 import React from "react"
 import './Navbar.css'
-import{NavLink} from "react-router-dom";
+import{NavLink} from "react-router-dom"
+
 
 const NavBar = () => {
     const categories = [
@@ -23,10 +24,11 @@ const NavBar = () => {
               <NavLink to={cat.address} exact activeClassName={'activeClass'}>
                 {cat.text}
               </NavLink>
+             
             </div>
           );
       
-        })}
+        })}  
        </section>
     );
   };

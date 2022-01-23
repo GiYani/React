@@ -6,13 +6,13 @@ import { Button, Badge } from "react-bootstrap";
 
 export const CartWidgets =()=> {
  const{items,Limpiar}=useContext(CompraContext);
+ 
     const sumaCantidad =(items)=>{
         var  q = 0;
-        for (let i = 0; i < items.length; i++){   
+        for (let i = 0; i <items.length;i++){   
             q = q + items[i].quantity;
         }
-        console.log(q);   
-        
+        console.log(q);          
     };    
     if (items.length>0){
         return( 

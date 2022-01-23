@@ -9,8 +9,8 @@ import {
     Switch,
     Route,
     Redirect,
-   } from "react-router-dom";
-
+} from "react-router-dom";
+import CartWidgets from './componentes/CartWidgets/CartWidget';
 import { CompraProvider } from './componentes/CompraContex';
 import { Carrito } from './componentes/CartWidgets/carrito';
 
@@ -45,7 +45,7 @@ const App =()=> {
                 <Route path="/categoria/salado">
                     <h3 className='title'>Opciones Saladas</h3>
                 </Route>
-                <Route path="/carrito"> 
+                <Route path="/carrito"> <CartWidgets/>
                     <h3 className='title'>Carrito</h3>  
                     <Carrito/>                   
                 </Route>

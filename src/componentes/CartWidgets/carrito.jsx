@@ -3,8 +3,6 @@ import { useContext } from "react/cjs/react.development";
 import { CompraContext } from "../CompraContex";
 import {Table, Button} from "react-bootstrap"
 
-
-
 export const Carrito =()=>{
     const{ items, removeProduct, vaciarCarrito}= useContext(CompraContext)
    
@@ -32,7 +30,7 @@ export const Carrito =()=>{
                             <td>{item.quantity}</td>
                             <td>{item.precio}</td>
                             <td>{item.quantity * item.precio}</td>
-                            <td><Button variant="outline-secondary" onClick={()=>removeProduct(item.id)}> borrar producto</Button>{' '}</td>
+                            <td><Button variant="outline-secondary" onClick={()=>removeProduct(item.id)}>Eliminar producto</Button>{' '}</td>
                         </tr>  
                         <tr>
                             <td></td>
