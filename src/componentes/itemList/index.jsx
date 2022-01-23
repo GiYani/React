@@ -1,6 +1,6 @@
 
 import Item from '../item';
-import './itemList.css'
+
 const ItemList = ({ items }) => {
   return (
     <section className="">

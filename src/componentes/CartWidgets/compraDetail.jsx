@@ -6,8 +6,6 @@ export const CompraDetail=()=>{
      
     const totalCompra = () => {
         return items.reduce((acc, curr) => acc + curr.precio * curr.quantity, 0);
-      
-
     };    
  
     return(
@@ -16,7 +14,7 @@ export const CompraDetail=()=>{
                 return (
                 <div>
                     <tr>
-                        <td>{items.items.title}</td>
+                        <td>{items.titulo}</td>
                         <td>{items.quantity}</td>
                         <td>{items.item.precio}</td>
                         <td>{totalCompra()}</td>

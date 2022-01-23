@@ -6,26 +6,26 @@ import { Link } from 'react-router-dom';
 
 
 
-export const ItemDetail = ({category, title, image, description, precio, id, stock }) => { 
+export const ItemDetail = ({id, titulo, categoria, descripcion, imagen, precio ,stock}) => { 
   
   const[redireccionCart, setRedireccion]=useState(false);
-  const {item, addProduct}= useContext(CompraContext);
+  const {addProduct}= useContext(CompraContext);
  
 
   const onAdd =(contador)=>{
     setRedireccion(true)
-    addProduct ({quantity:contador,category, title, image, description, precio, id, stock });
-    alert(`Agrego ${contador} productos     `)
+    addProduct ({quantity:contador,id, titulo, categoria, descripcion, imagen, precio });
+  
   }
     
   return (
-    <div className={`item_card ${category}-fitIntegral`}>
-      <h2 style={{ fontWeight:'400'}}>{title}</h2> 
+    <div className={`item_card ${categoria}-fitIntegral`}>
+      <h2 style={{ fontWeight:'400'}}>{titulo}</h2> 
         <span>
-          <img src={image} alt={title} className={'big-img'} />
+          <img src={imagen} alt={titulo} className={'big-img'} />
         </span>
-      <h3 style={{ fontWeight:'400'}}>{description}</h3>
-      <h3 style={{fontWeight:'500'}}>{precio}</h3>
+      <h3 style={{ fontWeight:'400'}}>{descripcion}</h3>
+      <h3 style={{fontWeight:'500'}}>Precio:{precio}</h3>
       <Link to="/">Seguir comprando</Link> 
       <br/>
 

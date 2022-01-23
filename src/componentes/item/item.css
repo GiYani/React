@@ -8,8 +8,10 @@ div{
     flex-direction: column;
     box-shadow: 7px 6px 12px -1px rgba(72, 72, 72, 0.77);
     border-radius: 10px;    
-    color: white;
+    color:honeydew;
+    background-color: rgb(44, 206, 190);
     justify-content: space-around;
+
 }
   
 .medium-img {

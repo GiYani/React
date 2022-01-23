@@ -2,14 +2,13 @@ import { useContext, useRef } from "react"
 import { CompraContext } from "../CompraContex";
 
 
-export const NewProduct =()=>{
+export const newProduct =()=>{
 
     const{addProduct, enCarro,totalPrecio}=useContext(CompraContext)
     const referencia= useRef ({});
     
     const handleSubmit=(event)=>{
         event.preventDefault();
-      
     };
     return(
     <>

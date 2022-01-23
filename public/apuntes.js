@@ -95,7 +95,7 @@ export const CompraDetail=()=>{
 import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { CompraContext } from "../CompraContex";
-import NavBar from "../NavBar/NavBar";
+
 import { CompraDetail } from "./compraDetail";
 
 

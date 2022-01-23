@@ -1,37 +1,51 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { CompraContext } from "../CompraContex";
+import {Table, Button} from "react-bootstrap"
 
 
 
 export const Carrito =()=>{
     const{ items, removeProduct, vaciarCarrito}= useContext(CompraContext)
-    console.log(items)
-
+   
     const totalCompra = () => {
       return items.reduce((acc, curr) => acc + curr.precio * curr.quantity, 0);
   };    
 
-    const Limpiar =()=>{ vaciarCarrito()}
-    if (items.length> 0){
+    const Limpiar =()=>{vaciarCarrito()}
+    if (items.length>0){
         return <>{
           items.map((item) => {
             return <div>
-                <table>
-                <tr>
-                    <td>{item.title}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.precio}</td>
-                    <td>{item.quantity * item.precio}</td>
-                    <td><button onClick={()=>removeProduct(item.id)}> borrar producto</button></td>
-
-                </tr>
-               </table>
-            </div>        
-          }
-          )
-        }{totalCompra()}
-                  <button onClick={Limpiar}>vaciar Carrito</button>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio U.</th>
+                        <th>Precio T.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{item.titulo}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.precio}</td>
+                            <td>{item.quantity * item.precio}</td>
+                            <td><Button variant="outline-secondary" onClick={()=>removeProduct(item.id)}> borrar producto</Button>{' '}</td>
+                        </tr>  
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td> <p>Total Compra</p></td>
+                            <td>{totalCompra()}</td>
+                            <td><Button variant="outline-secondary"onClick={Limpiar}>Vaciar carrito</Button>{' '}</td>
+                        </tr> 
+                    </tbody>
+                </Table>
+            </div>     
+          })
+        } 
         </>
     } else {
         return(

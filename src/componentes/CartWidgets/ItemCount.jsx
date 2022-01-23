@@ -3,7 +3,6 @@ import { useState } from 'react';
 const ItemCount = ({onAdd,stock}) => {
   const [contador, setContador] = useState(0);
 
-  
   return (
    <div>
     <button onClick = {contador>1 

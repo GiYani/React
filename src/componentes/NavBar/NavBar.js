@@ -1,18 +1,17 @@
 import React from "react"
 import './Navbar.css'
-
 import{NavLink} from "react-router-dom";
 
 const NavBar = () => {
     const categories = [
       { id: 'home', address: '/', text: 'Pita´s Food' },
-      { id: 'a1', address: '/fitIntegral/Integral', text: 'Integral' },
-      { id: 'a2', address: '/fitIntegral/Fit', text: 'Fit' },
-      { id: 'b', address: '/dulce', text: 'Dulce' },
-      { id: 'c', address: '/salado', text: 'Salado' },
+      { id: 'a0', address : '/categoria/:catId' },
+      { id: 'a1', address: '/categoria/integral', text:'Integral'},
+      { id: 'a2', address: '/categoria/fit', text: 'Fit' },
+      { id: 'b', address: '/categoria/dulce', text: 'Dulce' },
+      { id: 'c', address: '/categoria/salado', text: 'Salado' },
       { id: 'ca', address: '/carrito', text: 'Carrito' },
-      
-      
+            
     ];
   
     return (
@@ -26,9 +25,9 @@ const NavBar = () => {
               </NavLink>
             </div>
           );
-          
+      
         })}
-      </section>
+       </section>
     );
   };
   

@@ -5,13 +5,13 @@
     overflow: hidden;
     background-color: rgb(204, 184, 221);   
     font-weight:400 ;
-    font-size: x-large;
+    font-size: large;
         
   } 
   
   .links {
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   

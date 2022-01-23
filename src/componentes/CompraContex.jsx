@@ -23,11 +23,9 @@ export const CompraProvider = ({children}) => {
         setItems([...items, producto]);
       }
     };
-    console.log(items)
-
     const vaciarCarrito =()=>{
       setItems ([])
-    }
+    };
 
     const totalPrecio = () => {
       return items.reduce((acc, curr) => acc + curr.precio, 0);
@@ -35,7 +33,7 @@ export const CompraProvider = ({children}) => {
   
 
    
-    return ( <CompraContext.Provider value={{items,removeProduct, addProduct, vaciarCarrito,totalPrecio}}>{children}
+    return ( <CompraContext.Provider value={{items,removeProduct, vaciarCarrito,addProduct, totalPrecio}}>{children}
     </CompraContext.Provider>);
 };    
 
