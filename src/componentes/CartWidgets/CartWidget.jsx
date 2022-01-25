@@ -4,26 +4,28 @@ import { useContext } from "react";
 import { CompraContext } from "../CompraContex";
 import { Button, Badge } from "react-bootstrap";
 
+
 export const CartWidgets =()=> {
- const{items,Limpiar}=useContext(CompraContext);
+ const{items}=useContext(CompraContext);
  
     const sumaCantidad =(items)=>{
-        var  q = 0;
-        for (let i = 0; i <items.length;i++){   
-            q = q + items[i].quantity;
+        let suma = 0;
+        for (let i = 0; i < items.length; i++){   
+            suma = suma + items[i].quantity;
         }
-        console.log(q);          
+        return suma
+              
     };    
-    if (items.length>0){
-        return( 
-        <Button variant="outline-secondary"onClick={Limpiar}>
-             <i><AiOutlineShoppingCart/></i> 
-            <Badge variant="success">{sumaCantidad(items)}</Badge>        
-        </Button>                                                                               
-        );
-    }else{
-        
-    }
-};        
+   console.log(sumaCantidad(items))
+    return( 
+        items.length>0 && 
+        <Button variant="outline-secondary">
+         <AiOutlineShoppingCart/><Badge bg="success">{sumaCantidad(items)}</Badge>     
+        </Button>                                                                           
 
-export default CartWidgets;
+    );
+
+   
+      
+};
+export default CartWidgets

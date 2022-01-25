@@ -10,7 +10,7 @@ export const CompraDetail=()=>{
  
     return(
         <div>
-            {items.map((items) => {
+            {items.map((item) => {
                 return (
                 <div>
                     <tr>
