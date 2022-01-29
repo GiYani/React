@@ -1,20 +1,21 @@
 import { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
 const ItemCount = ({onAdd,stock}) => {
   const [contador, setContador] = useState(0);
 
   return (
    <div>
-    <button onClick = {contador>1 
+    <Button variant="outline-light" size="sm" onClick = {contador>1 
       ?()=>{ setContador (contador-1);}
       :()=>{ setContador(contador);}
-    }>-</button>
-    <button>{contador}</button>
-    <button onClick = {contador<stock
+    }>-</Button>
+    <Button variant="outline-light" size="sm">{contador}</Button>
+    <Button variant="outline-light" size="sm" onClick = {contador<stock
       ?()=>{ setContador (contador+1);}
       :()=>{ setContador(contador);}
-    }>+</button>
-    <button onClick={ ()=> onAdd (contador)}> Agregar</button>
+    }>+</Button>
+    <Button variant="outline-light" size="sm" onClick={ ()=> onAdd (contador)}> Agregar</Button>
    
     </div> 
   );

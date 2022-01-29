@@ -4,18 +4,14 @@ div{
 
  
 .item_card {
-    display: flex;
-    flex-direction: column;
     box-shadow: 7px 6px 12px -1px rgba(72, 72, 72, 0.77);
     border-radius: 10px;    
-    color:honeydew;
+    color:rgb(130, 90, 158);
     background-color: rgb(44, 206, 190);
-    justify-content: space-around;
-
+       
 }
   
 .medium-img {
-    height: 200px;
     border-radius: 20px;
   
 }
@@ -23,14 +19,11 @@ div{
 
 .Integral-fitIntegral{
     background-color: rgb(130, 210, 230);
-    text-align:center;
-  
 }
   
 .Fit-fitIntegral{
     background-color: rgb(44, 206, 190);
-    text-align:center;
-  
+
 
 }
   
