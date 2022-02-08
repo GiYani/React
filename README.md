@@ -13,14 +13,13 @@ This project was bootstrapped with Create React App.
 1. Install Visual Studio Code.
 2. Get a free API Key at [https://es.reactjs.org/docs/getting-started.html]
 3. Clone the repo git clone [https://github.com/GiYani/React.git]
-4. Install NPM packages [npm install]
-
+4. Install NPM packages [npm install](https://docs.npmjs.com/cli/v8/commands/npm-install)
 ## Available Scripts
 In the project directory, you can run:
 
 ## npm start
 Runs the app in the development mode.
-Open [http://localhost:3000] to view it in the browser.
+Open (http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
