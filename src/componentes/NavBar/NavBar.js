@@ -10,7 +10,7 @@ const NavBar = () => {
       { id: 'a0', address : '/categoria/:catId' },
       { id: 'a1', address: '/categoria/integral', text:'Integral'},
       { id: 'a2', address: '/categoria/fit', text: 'Fit' },
-      { id: 'b', address: '/categoria/dulce', text: 'Dulce' },
+      { id: 'b', address: '/categoria/postres', text: 'Postres' },
       { id: 'c', address: '/categoria/salado', text: 'Salado' },
       { id: 'ca', address: '/carrito', },
             

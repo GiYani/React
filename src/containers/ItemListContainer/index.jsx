@@ -1,14 +1,11 @@
 
 import { useEffect, useState } from "react";
 import ItemList from "../../componentes/itemList";
-/*import mockedItems from "../../mock/mockItem";*/
 import { useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
 
 export const ItemListContainers = ({ greeting }) => {
   const [items, setItems] = useState([]);
-  /*const [loading, setLoading] = useState(true);*/
-
   const { catId } = useParams();
 
   useEffect(() => {
@@ -32,23 +29,7 @@ export const ItemListContainers = ({ greeting }) => {
     }); 
   }
 
-    /* setLoading(true);
-    const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        const myData = catId
-          ? mockedItems.filter((item) => item.category === catId)
-          : mockedItems;
-
-        resolve(myData);
-      }, 1000);
-    }); */
-
-    /* getItems
-      .then((res) => {
-        setItems(res);
-      })
-      .finally(() => setLoading(false));*/
-    },   [catId ]);
+   },   [catId ]);
 
     const titulos =[
     {cat:"integral", titulo:"Productos Integrales"},

@@ -30,10 +30,14 @@ export const CompraProvider = ({children}) => {
     const totalPrecio = () => {
       return items.reduce((acc, curr) => acc + curr.precio, 0);
     };
+
+    const totalCompra = () => {
+      return items.reduce((acc, curr) => acc + curr.precio * curr.quantity, 0);
+  }; 
   
 
    
-    return ( <CompraContext.Provider value={{items,removeProduct, vaciarCarrito,addProduct, totalPrecio}}>{children}
+    return ( <CompraContext.Provider value={{items,removeProduct, vaciarCarrito,addProduct, totalPrecio, totalCompra}}>{children}
     </CompraContext.Provider>);
 };    
 
